@@ -148,16 +148,22 @@ graph TD
     B --> P["remaining = X<br/>count = 0"]
     P --> C{remaining>=a}
     C -- Нет --> O[/Вывод: count/]
+    O --> U([Конец])
     C -- Да --> D{"remaining-a<br/>count+1"}
     D --> E{remaining>=b}
     E -- Нет --> F[/Вывод: count/]
+    F --> U([Конец])
     E -- Да --> G{"remaining-b<br/>count+1"}
     G --> H{remaining>=c}
     H -- Нет --> J[/Вывод: count/]
+    J --> U([Конец])
     H -- Да --> K{"remaining-c<br/>count+1"}
     K --> L{remaining>=d}
     L -- Нет --> Z[/Вывод: count/]
-    L -- Да --> X{"count+1<br/>Вывод: count"}
+    Z --> U([Конец])
+    L -- Да --> X{"count+1"}
+    X --> T[/Вывод: count/]
+    T --> U([Конец])
 ```
 
 ### 5. Программа
